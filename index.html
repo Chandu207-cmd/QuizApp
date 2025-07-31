@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Email Start Screen -->
+    <div id="start-screen">
+      <h2>Welcome to the Quiz</h2>
+      <input type="email" id="email" placeholder="Enter your email" required><br>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="hidden">
+      <div id="circle-timer-container">
+        <div id="circle-timer">30:00</div>
+      </div>
+
+      <!-- Flex container for question and overview -->
+      <div class="quiz-body">
+        <!-- Left: Questions -->
+        <div id="question-container" class="question-container">
+          <div id="question-text"></div>
+          <div id="options"></div>
+          <div class="nav">
+            <button onclick="prevQuestion()">Prev</button>
+            <button onclick="nextQuestion()">Next</button>
+            <button onclick="markForReview()">Mark for Review</button>
+          </div>
+        </div>
+
+        <!-- Right: Question Number Overview -->
+        <div id="overview"></div>
+      </div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="hidden">
+      <h2>Quiz Report</h2>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <!-- Submit button outside question container, fixed bottom right -->
+  <button id="submit-button" class="submit-button hidden" onclick="submitQuiz()">Submit Quiz</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
